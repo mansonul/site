@@ -1,120 +1,189 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BitCloud: Soluții la Înălțime, Conectate Digital</title>
-<link rel="stylesheet" href="style.css"> </head>
-<body>
-    <header>
-        <div class="container">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitClimb: Soluții la Înălțime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6600', /* Portocaliu */
+                        'secondary': '#61C0BF', /* Verde/Turcoaz */
+                        'light-gray': '#F8F8F8', /* Gri deschis pentru fundaluri subtile */
+                        'dark-text': '#333333', /* Text închis */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-dark-text bg-light-gray">
+
+    <header class="bg-dark-text text-white-text py-4 border-b-4 border-primary">
+        <div class="container mx-auto flex justify-between items-center px-4">
             <div class="logo">
-                <h1>BitCloud</h1>
+                <img src="logo/bitmap.png" alt="BitClimb Logo" class="h-16">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Acasă</a></li>
-                    <li><a href="#services">Servicii</a></li>
-                    <li><a href="#about">Despre noi</a></li>
-                    <li><a href="#contact">Contact</a></li>
+
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0">
+                    <li><a href="#home" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Acasă</a></li>
+                    <li><a href="#services" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Servicii</a></li>
+                    <li><a href="#about" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Despre noi</a></li>
+                    <li><a href="#contact" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Contact</a></li>
                 </ul>
             </nav>
         </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-dark-text pt-4 pb-2">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="#home" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Acasă</a></li>
+                <li><a href="#services" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Servicii</a></li>
+                <li><a href="#about" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Despre noi</a></li>
+                <li><a href="#contact" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>BitCloud: Soluții la Înălțime, Conectate Digital.</h1>
-            <p>Combinăm expertiza în alpinism utilitar cu inovația IT pentru a oferi soluții complexe și sigure, acolo unde precizia și tehnologia fac diferența.</p>
-            <a href="#services" class="btn">Descoperă Serviciile Noastre</a>
+
+    <section id="home" class="relative text-white text-center py-32 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/1500x500/FF6600/61C0BF?text=BitClimb+Solutii');">
+        <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+        <div class="container mx-auto relative z-10 px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Pentru Provocări de Vârf,<br>Soluții BitClimb.</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Combinăm expertiza în alpinism utilitar cu inovația IT pentru a oferi soluții complexe și sigure, acolo unde precizia și tehnologia fac diferența.</p>
+            <a href="#services" class="inline-block bg-primary text-white-text px-8 py-3 rounded-lg font-bold text-lg hover:bg-orange-700 transition duration-300 transform hover:-translate-y-0.5">Descoperă Serviciile Noastre</a>
         </div>
     </section>
-    
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Serviciile Noastre</h2>
-    
-            <div class="service-item">
-                <h3>Lucrări la Înălțime cu Precizie Maximă</h3>
-                <p>Echipa noastră de alpiniști utilitari certificați abordează cu siguranță și eficiență cele mai dificile proiecte la înălțime: mentenanță structuri, curățare fațade, instalări complexe, inspecții și multe altele.</p>
-                <ul>
+
+    <section id="services" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
+        <h2 class="text-4xl font-bold text-center mb-10 text-primary">Serviciile Noastre</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-8 bg-light-gray rounded-lg shadow-sm hover:shadow-md transform hover:-translate-y-1 transition duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-secondary">Lucrări la Înălțime cu Precizie Maximă</h3>
+                <p class="mb-4">Echipa noastră de alpiniști utilitari certificați abordează cu siguranță și eficiență cele mai dificile proiecte la înălțime: mentenanță structuri, curățare fațade, instalări complexe, inspecții și multe altele.</p>
+                <ul class="list-disc list-inside space-y-2">
                     <li>Mentenanță și reparații structurale</li>
                     <li>Curățare și vopsitorie fațade</li>
                     <li>Instalare și demontare echipamente</li>
                     <li>Inspecții și expertize vizuale</li>
                 </ul>
             </div>
-    
-            <div class="service-item">
-                <h3>Tehnologie de Vârf pentru Afacerea Ta</h3>
-                <p>Dezvoltăm și implementăm soluții IT personalizate, de la infrastructură de rețea la dezvoltare software și securitate cibernetică, asigurând eficiență și inovație pentru orice provocare, indiferent de complexitate.</p>
-                <ul>
+
+            <div class="p-8 bg-teal-50 border-l-4 border-secondary rounded-lg shadow-sm">
+                <h3 class="text-2xl font-semibold mb-4 text-secondary">Unde Forțele se Unesc: Inovație la Înălțime</h3>
+                <p>Fie că vorbim de instalarea unor echipamente IT complexe în locații dificil de accesat, de inspecții detaliate cu drone și analiză de date avansată, sau de implementarea de senzori inteligenți în structuri înalte, <strong class="font-bold text-primary">BitClimb</strong> îți oferă soluții integrate, combinând siguranța și expertiza la înălțime cu puterea tehnologiei digitale.</p>
+            </div>
+
+            <div class="p-8 bg-light-gray rounded-lg shadow-sm hover:shadow-md transform hover:-translate-y-1 transition duration-300">
+                <h3 class="text-2xl font-semibold mb-4 text-secondary">Tehnologie de Vârf pentru Afacerea Ta</h3>
+                <p class="mb-4">Dezvoltăm și implementăm soluții IT personalizate, de la infrastructură de rețea la dezvoltare software și securitate cibernetică, asigurând eficiență și inovație pentru orice provocare, indiferent de complexitate.</p>
+                <ul class="list-disc list-inside space-y-2">
                     <li>Dezvoltare software la comandă</li>
                     <li>Administrare rețele și infrastructură</li>
-                    <li>Consultanță IT și securitate cibernetică</li>
+                    <li>Consultanță IT</li>
                     <li>Soluții integrate pentru monitorizare</li>
                 </ul>
             </div>
-    
-            <div class="service-item synergy">
-                <h3>Unde Forțele se Unesc: Inovație la Înălțime</h3>
-                <p>Fie că vorbim de instalarea unor echipamente IT complexe în locații dificil de accesat, de inspecții detaliate cu drone și analiză de date avansată, sau de implementarea de senzori inteligenți în structuri înalte, <strong>BitCloud</strong> îți oferă soluții integrate, combinând siguranța și expertiza la înălțime cu puterea tehnologiei digitale.</p>
-            </div>
         </div>
     </section>
-    
-    <section id="about" class="about-us">
-        <div class="container">
-            <h2>Povestea BitCloud</h2>
-            <p>Suntem <strong>BitCloud</strong>, o companie născută din viziunea comună de a rezolva provocări unice. Prin unirea expertizei noastre în alpinism utilitar și a pasiunii pentru inovația IT, am creat o entitate capabilă să depășească limitele tradiționale. Ne dedicăm oferirii de soluții sigure, eficiente și adaptate nevoilor complexe ale clienților noștri.</p>
-            <h3>Valorile Noastre:</h3>
-            <ul>
-                <li>Siguranță</li>
-                <li>Inovație</li>
-                <li>Precizie</li>
-                <li>Colaborare</li>
-            </ul>
+
+    <section id="about" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
+        <h2 class="text-4xl font-bold text-center mb-10 text-primary">Povestea BitClimb</h2>
+        <p class="mb-6 text-lg">Suntem <strong class="font-bold">BitClimb</strong>, o companie născută din viziunea comună de a rezolva provocări unice. Prin unirea expertizei noastre în alpinism utilitar și a pasiunii pentru inovația IT, am creat o entitate capabilă să depășească limitele tradiționale. Ne dedicăm oferirii de soluții sigure, eficiente și adaptate nevoilor complexe ale clienților noștri.</p>
+        <h3 class="text-2xl font-semibold mb-4 text-secondary">Valorile Noastre:</h3>
+        <ul class="list-disc list-inside text-lg space-y-2">
+            <li>Siguranță</li>
+            <li>Inovație</li>
+            <li>Precizie</li>
+            <li>Colaborare</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
+        <h2 class="text-4xl font-bold text-center mb-10 text-primary">Contactează-ne</h2>
+        <form action="#" method="POST" class="max-w-xl mx-auto p-8 bg-light-gray rounded-lg shadow-sm">
+            <div class="mb-6">
+                <label for="name" class="block text-dark-text text-lg font-bold mb-2">Nume:</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="mb-6">
+                <label for="email" class="block text-dark-text text-lg font-bold mb-2">Email:</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="mb-6">
+                <label for="subject" class="block text-dark-text text-lg font-bold mb-2">Subiect:</label>
+                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-dark-text text-lg font-bold mb-2">Mesaj:</label>
+                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-y"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary text-white-text px-6 py-3 rounded-lg font-bold text-xl hover:bg-orange-700 transition duration-300 transform hover:-translate-y-0.5">Trimite Mesajul</button>
+        </form>
+        <div class="text-center mt-10 text-lg">
+            <p class="mb-2"><strong>Telefon:</strong> +40 7xx xxx xxx</p>
+            <p class="mb-2"><strong>Email:</strong> contact@bitclimb.ro</p>
+            <p><strong>Adresă:</strong> Strada Exemplu, Nr. 123, Oraș, Țară</p>
         </div>
     </section>
-    
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactează-ne</h2>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Nume:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subiect:</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-                <div class="form-group">
-                    <label for="message">Mesaj:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Trimite Mesajul</button>
-            </form>
-            <div class="contact-info">
-                <p><strong>Telefon:</strong> +40 7xx xxx xxx</p>
-                <p><strong>Email:</strong> contact@bitcloud.ro</p>
-                <p><strong>Adresă:</strong> Strada Exemplu, Nr. 123, Oraș, Țară</p>
-            </div>
-            </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 BitCloud. Toate drepturile rezervate.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">LinkedIn</a>
+
+    <footer class="bg-dark-text text-white-text text-center py-8 mt-8">
+        <div class="container mx-auto px-4">
+            <p class="mb-4">&copy; 2025 BitClimb. Toate drepturile rezervate.</p>
+            <div class="space-x-6">
+                <a href="#" class="text-white-text text-xl hover:text-secondary transition duration-300">Facebook</a>
+                <a href="#" class="text-white-text text-xl hover:text-secondary transition duration-300">LinkedIn</a>
             </div>
         </div>
     </footer>
-    </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNav = document.getElementById('main-nav'); // Navigația principală pentru desktop
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden'); // Comută clasa 'hidden' pe meniul mobil
+                // Opțional, poți comuta și o clasă pentru animație, ex: 'slide-in' / 'slide-out'
+            });
+
+            // Închide meniul mobil dacă se dă click pe un link din meniu
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Logică pentru a gestiona vizibilitatea meniului la redimensionarea ferestrei
+            // (dacă se trece de la mobil la desktop, meniul mobil să fie ascuns, iar cel de desktop vizibil)
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) { // md breakpoint în Tailwind este 768px
+                    mobileMenu.classList.add('hidden'); // Ascunde meniul mobil
+                    mainNav.classList.remove('hidden'); // Asigură că navigația principală e vizibilă
+                } else {
+                    mainNav.classList.add('hidden'); // Ascunde navigația principală pe mobil
+                }
+            });
+
+            // Asigură starea corectă la încărcarea paginii (pentru cazurile refresh pe mobil/desktop)
+            if (window.innerWidth < 768) {
+                mainNav.classList.add('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mainNav.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
 </html>

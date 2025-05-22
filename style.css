@@ -1,181 +1,290 @@
+/* style.css */
+
 :root {
-        --primary-color: #007bff; /* Un albastru vibrant */
-        --secondary-color: #6c757d; /* Gri deschis */
-        --dark-text: #333;
-        --light-background: #f8f9fa;
-        --white-background: #fff;
-    }
+    --primary-color: #FF6600; /* Portocaliu */
+    --secondary-color: #61C0BF; /* Verde/Turcoaz */
+    --light-gray: #F8F8F8; /* Gri deschis pentru fundaluri subtile */
+    --dark-text: #333333; /* Text închis */
+    --white-text: #FFFFFF; /* Text alb */
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: var(--light-background);
-        color: var(--dark-text);
-    }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-text);
+}
 
-    .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-        padding: 20px 0;
-    }
+.container {
+    width: 85%; /* Lățime puțin mai mare pentru conținut */
+    max-width: 1200px; /* Limită maximă pentru desktop */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
 
+header {
+    background: var(--dark-text);
+    color: var(--white-text);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+    display: flex; /* Folosim flexbox pentru aliniere */
+    justify-content: space-between; /* Logo la stânga, nav la dreapta */
+    align-items: center; /* Centrare verticală */
+}
+
+header .logo img {
+    height: 60px; /* Ajustează înălțimea logo-ului */
+    width: auto;
+    display: block; /* Elimină spațiul de sub imagine */
+}
+
+/* Dacă vrei să ascunzi textul H1 dacă logo-ul conține deja numele */
+/* header .logo h1 {
+    display: none;
+} */
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 25px; /* Spațiu mai mare între elementele de navigație */
+}
+
+header nav a {
+    color: var(--white-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    /* Poți folosi o imagine de fundal relevantă aici, cu suprapunere de culoare */
+    background: url('https://via.placeholder.com/1500x500/FF6600/61C0BF?text=BitClimb+Solutii') no-repeat center center/cover;
+    color: var(--white-text);
+    text-align: center;
+    padding: 120px 0; /* Padding mai mare */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Umbră subtilă */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Suprapunere semi-transparentă pentru lizibilitate */
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.2em; /* Font mai mare */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Umbră pentru text */
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 700px; /* Limitează lățimea textului pentru lizibilitate */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white-text);
+    padding: 12px 25px; /* Padding mai mare */
+    text-decoration: none;
+    border-radius: 8px; /* Colțuri mai rotunjite */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background: #E55C00; /* O nuanță mai închisă la hover */
+    transform: translateY(-2px); /* Efect subtil la hover */
+}
+
+section {
+    padding: 60px 0; /* Padding mai mare pentru secțiuni */
+    background-color: var(--white-text);
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Umbră mai pronunțată */
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.services .service-item, .about-us ul {
+    background: var(--light-gray);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.services .service-item:hover {
+    transform: translateY(-5px);
+}
+
+.services .synergy {
+    background: #E0F2F1; /* Un fundal ușor diferit pentru secțiunea de sinergie */
+    border-left: 5px solid var(--secondary-color);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Ajustare pentru padding */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionarea pe verticală */
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+footer {
+    background: var(--dark-text);
+    color: var(--white-text);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+footer .social-links a {
+    color: var(--white-text);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     header {
-        background: var(--dark-text);
-        color: #fff;
-        padding: 1rem 0;
-        border-bottom: 3px solid var(--primary-color);
-    }
-
-    header .logo h1 {
-        margin: 0;
-        display: inline-block;
+        flex-direction: column;
+        text-align: center;
     }
 
     header nav {
-        float: right;
-        margin-top: 10px;
-    }
-
-    header nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    header nav ul li {
-        display: inline;
-        margin-left: 20px;
-    }
-
-    header nav a {
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    header nav a:hover {
-        color: var(--primary-color);
-    }
-
-    .hero {
-        background: url('https://via.placeholder.com/1500x500/007bff/ffffff?text=BitCloud') no-repeat center center/cover; /* Poți înlocui cu o imagine relevantă */
-        color: #fff;
-        text-align: center;
-        padding: 100px 0;
-        position: relative;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Suprapunere semi-transparentă */
-    }
-
-    .hero .container {
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        display: inline-block;
-        background: var(--primary-color);
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-        background: #0056b3;
-    }
-
-    section {
-        padding: 40px 0;
-        background-color: var(--white-background);
-        margin-bottom: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .services .service-item, .about-us ul {
-        background: var(--light-background);
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-
-    .services .synergy {
-        background: #e9ecef; /* Un fundal ușor diferit pentru secțiunea de sinergie */
-        border-left: 5px solid var(--primary-color);
-    }
-
-    .contact form {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background: var(--light-background);
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-sizing: border-box; /* Include padding în lățimea totală */
-    }
-
-    .contact-info {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    footer {
-        background: var(--dark-text);
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
+        float: none;
         margin-top: 20px;
     }
 
-    footer .social-links a {
-        color: #fff;
+    header nav ul li {
         margin: 0 10px;
-        text-decoration: none;
     }
 
-    footer .social-links a:hover {
-        color: var(--primary-color);
+    .hero h1 {
+        font-size: 2.5em;
     }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .services .service-item {
+        padding: 20px;
+    }
+
+    .contact form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
