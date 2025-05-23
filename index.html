@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BitClimb: Soluții la înălțime</title>
+    <meta name="description" content="BitClimb oferă soluții integrate de alpinism utilitar (curățare fațade, mentenanță) și servicii IT de vârf. Expertiză, siguranță și tehnologie pentru provocări de vârf.">
+    <meta name="keywords" content="alpinism utilitar, curățare fațade, mentenanță clădiri, lucrări la înălțime, România, toată țara, servicii industriale, soluții IT, dezvoltare software, servicii IT">
+    <link rel="canonical" href="https://bitclimb.ro/">
 
     <link rel="icon" type="image/png" href="images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,24 +51,24 @@
 
         <div id="mobile-menu" class="md:hidden hidden bg-dark-text pt-4 pb-2">
             <ul class="flex flex-col space-y-2">
-                <li><a href="#home" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Acasă</a></li>
-                <li><a href="#services" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Servicii</a></li>
-                <li><a href="#about" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Despre noi</a></li>
+                <li><a href="#acasa" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Acasă</a></li>
+                <li><a href="#servicii" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Servicii</a></li>
+                <li><a href="#despre" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Despre noi</a></li>
                 <li><a href="#contact" class="block py-2 px-4 text-secondary uppercase font-bold hover:text-primary transition duration-300">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    <section id="home" class="relative text-white text-center py-32 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/1500x500/FF6600/61C0BF?text=BitClimb+Solutii');">
+    <section id="acasa" class="relative text-white text-center py-32 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/1500x500/FF6600/61C0BF?text=BitClimb+Solutii');">
         <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
         <div class="container mx-auto relative z-10 px-4">
             <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Provocări de vârf,<br>soluții <span class="text-primary">BitClimb</span>.</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Combinăm expertiza în alpinism utilitar cu inovația IT pentru a oferi soluții complexe și sigure, acolo unde precizia și tehnologia fac diferența.</p>
-            <a href="#services" class="inline-block bg-primary text-white-text px-8 py-3 rounded-lg font-bold text-lg hover:bg-orange-700 transition duration-300 transform hover:-translate-y-0.5">Descoperă Serviciile Noastre</a>
+            <a href="#servicii" class="inline-block bg-primary text-white-text px-8 py-3 rounded-lg font-bold text-lg hover:bg-orange-700 transition duration-300 transform hover:-translate-y-0.5">Descoperă Serviciile Noastre</a>
         </div>
     </section>
 
-    <section id="services" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
+    <section id="servicii" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
         <h2 class="text-4xl font-bold text-center mb-10 text-primary">Serviciile Noastre</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,7 +101,7 @@
         </div>
     </section>
 
-    <section id="about" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
+    <section id="despre" class="py-16 bg-white-text my-6 shadow-md rounded-lg mx-auto container px-4">
         <h2 class="text-4xl font-bold text-center mb-10 text-primary">Povestea BitClimb</h2>
         <p class="mb-6 text-lg">Suntem <strong class="font-bold text-primary">BitClimb</strong>, o companie născută din viziunea comună de a rezolva provocări unice. Prin unirea expertizei noastre în alpinism utilitar și a pasiunii pentru inovația IT, am creat o entitate capabilă să depășească limitele tradiționale. Ne dedicăm oferirii de soluții sigure, eficiente și adaptate nevoilor complexe ale clienților noștri.</p>
         <h3 class="text-2xl font-semibold mb-4 text-secondary">Valorile Noastre:</h3>
@@ -115,15 +118,15 @@
         <form action="https://formspree.io/f/xvganavo" method="POST" class="max-w-xl mx-auto p-8 bg-light-gray rounded-lg shadow-sm">
             <div class="mb-6">
                 <label for="name" class="block text-dark-text text-lg font-bold mb-2">Nume:</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <input type="text" id="name" name="name" placeholder="Nume Prenume" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
             </div>
             <div class="mb-6">
                 <label for="email" class="block text-dark-text text-lg font-bold mb-2">Email:</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <input type="email" id="email" name="email" placeholder="email@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
             </div>
             <div class="mb-6">
-                <label for="subject" class="block text-dark-text text-lg font-bold mb-2">Subiect:</label>
-                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <label for="telefon" class="block text-dark-text text-lg font-bold mb-2">Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="0721123123" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
             </div>
             <div class="mb-6">
                 <label for="message" class="block text-dark-text text-lg font-bold mb-2">Mesaj:</label>
